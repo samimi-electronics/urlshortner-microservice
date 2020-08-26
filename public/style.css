@@ -26,6 +26,7 @@ form > input[type='text'] {
     padding: 1em 2em 1em 2em;
     font-size: 1.2em;
     border-radius: 1000px;
+    transition: 25ms ease-in;
 }
 
 form > input[type='text']::placeholder {
@@ -54,6 +55,7 @@ form > button[type='submit'] {
     color: white;
     font-weight: bold;
     cursor: pointer;
+    transition: 25ms ease-in;
 }
 
 form > button[type='submit']:hover {
