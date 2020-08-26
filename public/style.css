@@ -17,8 +17,8 @@ form > .label {
     box-sizing: content-box;
 }
 
-form > input[type='text'] {
-    margin: 2em 0em 1em 0em;
+#url_input {
+    margin: 2em 0em 0em 0em;
     height: 2.5em;
     border: 1px solid #eee;
     display: block;
@@ -29,16 +29,16 @@ form > input[type='text'] {
     transition: 25ms ease-in;
 }
 
-form > input[type='text']::placeholder {
+#url_input::placeholder {
     color: rgb(193, 193, 193);
 }
 
-form > input[type='text']:hover {
+#url_input:hover {
     border: none;
     box-shadow: 0px 0px 15px rgba(0,0,0,.1);
 }
 
-form > input[type='text']:focus {
+#url_input:focus {
     outline: none;
     border: none;
     box-shadow: 0px 0px 15px rgba(0,0,0,.1);
@@ -64,6 +64,11 @@ form > button[type='submit']:hover {
 
 form > button[type='submit']:focus {
     outline: none;
+}
+
+input.inputError {
+    background-color: #fff5f5;
+    border: 1px solid red !important;
 }
 
 @media only screen and (max-width: 768px) {

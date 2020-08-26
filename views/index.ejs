@@ -9,8 +9,12 @@
 <body>
 <form action="api/shorturl/new" method="post">
     <div class="label"><label>URL Shortner</label></div>
-    <input type="text" name="url" id="url_input" placeholder="http(s)://www.example.com">
-    <button type="submit">Shorten!</button>
+    <div>
+        <input type="text" name="url" id="url_input" placeholder="http(s)://www.example.com">
+        <small>Invalid URL input</small>
+    </div>
+    <button type="submit" id="submitBtn">Shorten!</button>
 </form>
+<script src="script.js"> </script>
 </body>
 </html>
