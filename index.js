@@ -50,11 +50,11 @@ app.post('/api/shorturl/new', async (req, res) => {
         // Save given url
         const givenUrl = url.parse(req.body.url)
         if (givenUrl.hostname == null)
-            return res.status(400).json({error: 'Invalid URL'})
+            return res.status(400).json({status:400, error: 'Invalid URL'})
         // Check if given url exist online
         dns.lookup(givenUrl.hostname, async (err, address, family) => {
             // If URL is not available respond with invalid URL
-            if (err) return res.status(400).json({error: 'Invalid URL'})
+            if (err) return res.status(400).json({status:400, error: 'Invalid URL'})
             // Save URL to database and show user shortened URL
             const url = new ShortURL({
                 originalUrl: req.body.url
@@ -63,17 +63,18 @@ app.post('/api/shorturl/new', async (req, res) => {
                 const savedUrl = await url.save()
                 console.log(savedUrl)
                 return res.json({
+                    status: 200,
                     original_url: givenUrl.href,
                     short_url: savedUrl._id
                 })
             } catch(err) {
                 console.log('Error saving data to database:', err)
-                return res.status(500).json({error: 'Internal error'})
+                return res.status(500).json({status:500, error: 'Internal error'})
             }
         })
     } catch (err) {
         console.log(err)
-        return res.status(400).json({error: 'Invalid URL'})
+        return res.status(400).json({status: 400, error: 'Invalid URL'})
     }
 })
 
@@ -81,11 +82,11 @@ app.get('/api/shorturl/:id', async (req, res) => {
     try {
         const url = await ShortURL.findById(req.params.id)
         if (!url)
-            return res.status(404).json({error: 'URL not found on the database'})
+            return res.status(404).json({status:404, error: 'URL not found on the database'})
         return res.redirect(url.originalUrl)
     } catch (err) {
         console.log(err)
-        return res.status(500).json({error: 'Internal error'})
+        return res.status(500).json({status:500, error: 'Internal error'})
     }
 })
 
