@@ -1,0 +1,9 @@
+POST http://localhost:3000/api/shorturl/new
+Content-Type: application/json
+
+{
+  "url": "https://www.google.com"
+}
+
+###
+GET http://localhost:3000/api/shorturl/Tc3WCe$uP
