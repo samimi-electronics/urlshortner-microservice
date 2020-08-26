@@ -18,7 +18,7 @@ form > .label {
 }
 
 #url_input {
-    margin: 2em 0em 0em 0em;
+    margin: 2em 0em 5px 0em;
     height: 2.5em;
     border: 1px solid #eee;
     display: block;
@@ -44,9 +44,22 @@ form > .label {
     box-shadow: 0px 0px 15px rgba(0,0,0,.1);
 }
 
+input.inputError {
+    background-color: #fff5f5;
+    box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.15);
+    border: #ff90c0 1px solid !important;
+}
+
+.errorMsg {
+    color: #ff90c0;
+    margin-left: 30px;
+    display: none;
+    font-family: sans-serif;
+}
+
 form > button[type='submit'] {
     display: block;
-    margin: 0 auto;
+    margin: 15px auto 0 auto;
     border-radius: 1000px;
     width: 150px;
     height: 40px;
@@ -64,11 +77,6 @@ form > button[type='submit']:hover {
 
 form > button[type='submit']:focus {
     outline: none;
-}
-
-input.inputError {
-    background-color: #fff5f5;
-    border: 1px solid red !important;
 }
 
 @media only screen and (max-width: 768px) {
