@@ -79,6 +79,39 @@ form > button[type='submit']:focus {
     outline: none;
 }
 
+.newUrlSection {
+    display: none;
+    opacity: 0;
+    text-align: center;
+    margin: 30px 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+.newUrlSection > h2 {
+    text-align: center;
+    margin: 5px 0;
+    color: #222;
+    font-family: sans-serif;
+}
+
+.separator {
+    margin: 0 auto;
+    width: 50px;
+    height: 3px;
+    background-color: #222;
+    border-radius: 1000px;
+}
+
+.newUrl {
+    text-align: center;
+    margin: 15px 0;
+    color: #2168de;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 1.5em;
+    overflow-wrap: break-word;
+}
+
 @media only screen and (max-width: 768px) {
     form {
         margin: 0 auto;
